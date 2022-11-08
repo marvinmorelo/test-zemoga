@@ -8,7 +8,7 @@ For persistence management, the Firebase cloud service was used through the [Ang
 
 ## Demo online
 
-You can view a demo of the application in the following link: `https://ruleofthumb-8fb72.web.app`
+You can view a demo of the application in the following link: [https://ruleofthumb-8fb72.web.app](https://ruleofthumb-8fb72.web.app)
 
 ## Getting Started
 
@@ -33,7 +33,7 @@ npm install -g @angular/cli
 1 Clone the repo
 
 ```
-git clone https://github.com/marvinmorelo/frontend-devskillsadv.git
+git clone `https://github.com/marvinmorelo/test-zemoga.git`
 ```
 
 2 Install NPM packages
