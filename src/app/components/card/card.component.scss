@@ -1,0 +1,265 @@
+.thumb-card {
+    width: 100%;
+    height: 170px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    color: white;
+    overflow: hidden;
+    &__image {
+        width: 267px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+    &__back-color {
+        background: linear-gradient(90deg, rgba(0, 0, 0, 0.0001) 0%, #888888 19.79%, #666666 50%, rgba(51, 51, 51, 0.6) 71.88%);
+        height: 170px;
+        width: 95%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 2;
+    }
+}
+
+.thumb-card-information {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    padding-right: 1rem;
+    gap: 15px;
+}
+
+.thumb-card-content {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    padding-left: 267px;
+    &__name {
+        margin: 0.1rem 0 0;
+        font-size: 36px;
+        font-weight: 300;
+        line-height: 60px;
+    }
+    &__description {
+        margin: 0;
+        font-weight: 300;
+    }
+}
+
+.thumbs-vote {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 15px;
+    margin-top: 0.5rem;
+    &__since {
+        font-size: 15px;
+        line-height: 18px;
+    }
+    .buttons-vote {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 10px;
+        .button-vote-thumb {
+            width: 45px;
+            height: 45px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 0;
+            cursor: pointer;
+            &--up {
+                background-color: var(--thumbs-up-card);
+            }
+            &--down {
+                background-color: var(--thumbs-down-card);
+            }
+            &--selected {
+                box-shadow: 0 0 0 2px white;
+            }
+            &__image {
+                width: 24px;
+                height: 24px;
+            }
+            &:disabled {
+                cursor: not-allowed;
+            }
+        }
+        .button-vote {
+            width: 135px;
+            height: 45px;
+            border: 1px solid white;
+            background-color: var(--color-darker-background);
+            color: white;
+            font-size: 18px;
+            line-height: 21px;
+            font-weight: 300;
+            cursor: pointer;
+            &:disabled {
+                background-color: var(--color-disabled-button);
+                cursor: not-allowed;
+            }
+            &__loading {
+                height: 100%;
+            }
+        }
+    }
+}
+
+.result-thumb {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    &--up {
+        background-color: var(--thumbs-up-card);
+    }
+    &--down {
+        background-color: var(--thumbs-down-card);
+    }
+    &__image {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+.thumb-card-votes {
+    position: relative;
+    z-index: 4;
+    width: 100%;
+    display: flex;
+}
+
+.thumb-votes {
+    display: flex;
+    align-items: center;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 15px;
+    -webkit-transition: width 0.5s linear;
+    -moz-transition: width 0.5s linear;
+    transition: width 0.5s linear;
+    &--up {
+        background-color: var(--thumbs-up-percent);
+        justify-content: flex-start;
+    }
+    &--down {
+        background-color: var(--thumbs-down-percent);
+        justify-content: flex-end;
+    }
+    &__image {
+        width: 22px;
+        height: 22px;
+    }
+    &__percent {
+        font-size: 27px;
+        line-height: 32px;
+        font-weight: 300;
+    }
+}
+
+.thumb-card-grid {
+    width: 348px;
+    height: 348px;
+    .result-thumb {
+        margin-top: 145px;
+        width: 30px;
+        height: 30px;
+        &__image {
+            width: 16px;
+            height: 16px;
+        }
+    }
+    .thumb-card-information {
+        flex-direction: column;
+        justify-content: flex-end;
+        width: 90%;
+        height: 348px;
+        padding: 0;
+    }
+    .thumb-card-content {
+        padding-left: 40px;
+        &__name {
+            margin: 0;
+            line-height: 43px;
+        }
+        &__description {
+            font-size: 15px;
+            line-height: 18px;
+        }
+    }
+    .thumbs-vote {
+        margin-top: 0;
+        padding-bottom: 50px;
+        &__since {
+            font-size: 12px;
+            line-height: 14px;
+        }
+        .buttons-vote {
+            .button-vote-thumb {
+                width: 30px;
+                height: 30px;
+                &__image {
+                    width: 16px;
+                    height: 16px;
+                }
+            }
+            .button-vote {
+                width: 107px;
+                height: 38px;
+                font-size: 15px;
+                line-height: 18px;
+            }
+        }
+    }
+    .thumb-card-votes {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+    }
+    .thumb-votes {
+        height: 36px;
+        &__image {
+            width: 15px;
+            height: 15px;
+        }
+        &__percent {
+            font-size: 18px;
+            line-height: 21px;
+        }
+    }
+}
+
+.thumb-card-grid .thumb-card__image {
+    height: 100%;
+    width: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+}
+
+.thumb-card-grid .thumb-card__back-color {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.6) 100%);
+    height: 249px;
+    width: 348px;
+    top: initial;
+    bottom: 0;
+    left: 0;
+}

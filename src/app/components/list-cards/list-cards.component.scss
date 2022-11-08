@@ -1,0 +1,53 @@
+.title-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &__text {
+        font-size: 45px;
+        font-weight: 300;
+        color: var(--color-dark-gray);
+        margin: 30px 0;
+    }
+}
+
+.list-loading {
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    &__icon {
+        width: 100px;
+    }
+    &__text {
+        margin: 0;
+        color: var(--color-dark-gray);
+    }
+}
+
+.type-list {
+    width: 173px;
+    height: 36px;
+    padding: 0 15px;
+    text-align: center;
+    font-size: 13.5px;
+    line-height: 13.5px;
+    font-family: "Lato", sans-serif;
+    border: 2px solid var(--color-darker-gray);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url(../../../assets/img/triangle-select.svg) no-repeat;
+    background-position: 143px center;
+}
+
+.thumbs-cards {
+    &--list {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+    }
+    &--grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 27px;
+    }
+}
