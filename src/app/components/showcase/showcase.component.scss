@@ -152,6 +152,13 @@
     font-weight: 300;
 }
 
+@media all and (max-width: 375px) {
+    .hero {
+        height: 57vw;
+        min-height: 35rem;
+    }
+}
+
 @media all and (min-width: 768px) {
     html, body {
         font-size: 14px;
@@ -159,6 +166,8 @@
 
     .hero {
         max-height: 38rem;
+        height: 57vw;
+        min-height: 30rem;
     }
 
     .hero__background {
@@ -186,13 +195,6 @@
 
     .featured-card__buttons {
         margin: 0 -1.5rem -2rem;
-    }
-}
-
-@media all and (max-width: 768px) {
-    .hero {
-        height: 57vw;
-        min-height: 30rem;
     }
 }
 

@@ -52,7 +52,24 @@
     }
 }
 
-@media all and (max-width: 768px) {
+@media all and (min-width: 375px) {
+    .title-list {
+        &__text {
+            font-size: 24px;
+        }
+    }
+    .thumbs-cards--grid {
+        display: flex;
+        overflow-x: scroll;
+    }
+}
+
+@media all and (min-width: 768px) {
+    .title-list {
+        &__text {
+            font-size: 45px;
+        }
+    }
     .thumbs-cards {
         &--grid {
             display: grid;

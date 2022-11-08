@@ -1,7 +1,7 @@
 <div class="list-cards">
     <div class="title-list">
         <h2 class="title-list__text">Previous Rulings</h2>
-        <select class="type-list" [(ngModel)]="typeList">
+        <select class="type-list" [(ngModel)]="typeList" *ngIf="!hideSelectListType">
             <option value="list">List</option>
             <option value="grid">Grid</option>
         </select>
