@@ -152,7 +152,7 @@
     font-weight: 300;
 }
 
-@media all and (max-width: 375px) {
+@media all and (min-width: 375px) {
     .hero {
         height: 57vw;
         min-height: 35rem;
@@ -166,7 +166,6 @@
 
     .hero {
         max-height: 38rem;
-        height: 57vw;
         min-height: 30rem;
     }
 

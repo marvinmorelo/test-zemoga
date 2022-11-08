@@ -264,7 +264,27 @@
     left: 0;
 }
 
-@media all and (max-width: 768px) {
+@media all and (max-width: 375px) {     
+    .thumb-card-grid {
+        width: 300px;
+        height: 300px;
+        .result-thumb {
+            margin-top: 135px;
+        }
+        .thumb-card-content {
+            &__name {
+                font-size: 30px;
+                line-height: 36px;
+            }
+            &__description {
+                font-size: 15px;
+                line-height: 18px;
+            }
+        }
+    }
+}
+
+@media all and (min-width: 768px) {
     .thumb-card {
         height: 142px;
         &__image {
@@ -334,8 +354,4 @@
         width: 351px;
         height: 351px;
     }
-}
-
-@media all and (min-width: 375px) {
-
 }

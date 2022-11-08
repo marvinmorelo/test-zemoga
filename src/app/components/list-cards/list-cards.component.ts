@@ -19,16 +19,16 @@ export class ListCardsComponent implements OnInit, OnDestroy {
 
   @HostListener('window:resize', ['$event'])
   onResize(event: { target: { innerWidth: number; }; }) {
-    this.hideSelectListType = event.target.innerWidth <= 375;
-    this.typeList = event.target.innerWidth <= 375 ? 'grid' : 'list';
+    this.hideSelectListType = event.target.innerWidth <= 578;
+    this.typeList = event.target.innerWidth <= 578 ? 'grid' : 'list';
   }
   
   ngOnInit(): void {
     this.thumbsSubscription = this.thumbsService.getThumbs().subscribe((data: Thumb[]) => {
       this.thumbs = data;
     })
-    this.hideSelectListType = window.innerWidth <= 375;
-    this.typeList = window.innerWidth <= 375 ? 'grid' : 'list';
+    this.hideSelectListType = window.innerWidth <= 578;
+    this.typeList = window.innerWidth <= 578 ? 'grid' : 'list';
   }
 
   trackByItems(index: number, item: Thumb) {
