@@ -13,7 +13,7 @@ export class ListCardsComponent implements OnInit, OnDestroy {
   thumbs: Thumb[] = [];
   thumbsSubscription: Subscription = new Subscription();
 
-  typeList = 'grid';
+  typeList = 'list';
 
   constructor(private thumbsService: ThumbsService) { }
 

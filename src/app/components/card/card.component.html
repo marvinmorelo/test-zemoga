@@ -9,7 +9,7 @@
         <img class="thumb-card__image" [src]="'assets/img/celebrities/' + (thumb.picture | listTypeImage : listType)" [alt]="thumb.name">
         <div class="thumb-card__back-color"></div>
         <div class="thumb-card-content">
-            <h2 class="thumb-card-content__name">{{ thumb.name | truncateText : listType === 'list' ? 100 : 21 }}</h2>
+            <h2 class="thumb-card-content__name">{{ thumb.name | truncateText : listType === 'list' ? 100 : 18 }}</h2>
             <p class="thumb-card-content__description">{{ thumb.description | truncateText : listType === 'list' ? 100 : 70 }}</p>
         </div>
         <div class="thumbs-vote">

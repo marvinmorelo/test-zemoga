@@ -51,3 +51,13 @@
         gap: 27px;
     }
 }
+
+@media all and (max-width: 768px) {
+    .thumbs-cards {
+        &--grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 21px;
+        }
+    }
+}
