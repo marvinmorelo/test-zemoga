@@ -1,6 +1,6 @@
 import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import Thumb from 'src/app/interfaces/thumb.interface';
+import Celebrity from 'src/app/interfaces/celebrity.interface';
 import { ThumbsService } from 'src/app/services/thumbs.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { ThumbsService } from 'src/app/services/thumbs.service';
 })
 export class ListCardsComponent implements OnInit, OnDestroy {
 
-  thumbs: Thumb[] = [];
+  celebrities: Celebrity[] = [];
   thumbsSubscription: Subscription = new Subscription();
   typeList = 'list';
   hideSelectListType = false;
@@ -24,14 +24,14 @@ export class ListCardsComponent implements OnInit, OnDestroy {
   }
   
   ngOnInit(): void {
-    this.thumbsSubscription = this.thumbsService.getThumbs().subscribe((data: Thumb[]) => {
-      this.thumbs = data;
+    this.thumbsSubscription = this.thumbsService.getThumbs().subscribe((data: Celebrity[]) => {
+      this.celebrities = data;
     })
     this.hideSelectListType = window.innerWidth <= 578;
     this.typeList = window.innerWidth <= 578 ? 'grid' : 'list';
   }
 
-  trackByItems(index: number, item: Thumb) {
+  trackByItems(index: number, item: Celebrity) {
     return item?.id;
   }
 

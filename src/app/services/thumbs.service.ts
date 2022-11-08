@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { collection, collectionData, doc, Firestore, increment, onSnapshot, query, updateDoc, where } from '@angular/fire/firestore';
 import { Observable, of } from 'rxjs';
-import Thumb from '../interfaces/thumb.interface';
+import Celebrity from '../interfaces/celebrity.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -10,12 +10,12 @@ export class ThumbsService {
 
   constructor(private firestore: Firestore) { }
 
-  getThumbs(): Observable<Thumb[]> {
+  getThumbs(): Observable<Celebrity[]> {
     const thumbRef = collection(this.firestore, 'thumbs');
-    return collectionData(thumbRef, { idField: 'id' }) as Observable<Thumb[]>;
+    return collectionData(thumbRef, { idField: 'id' }) as Observable<Celebrity[]>;
   }
 
-  getFeaturedThumb(): Observable<Thumb[]> {
+  getFeaturedThumb(): Observable<Celebrity[]> {
     const thumbRef = collection(this.firestore, 'thumbs');
     const filter = query(thumbRef, where('featured', '==', true));
     let thumbs: any[] = [];

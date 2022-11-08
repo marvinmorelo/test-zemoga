@@ -6,7 +6,7 @@
             <option value="grid">Grid</option>
         </select>
     </div>
-    <div class="list-loading" *ngIf="thumbs.length === 0">
+    <div class="list-loading" *ngIf="celebrities.length === 0">
         <svg class="list-loading__icon" version="1.1" id="L9" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">
             <path fill="rgba(0, 0, 0, 0.4)" d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50">
               <animateTransform attributeName="transform" attributeType="XML" type="rotate" dur="1s" from="0 50 50" to="360 50 50" repeatCount="indefinite"></animateTransform>
@@ -14,9 +14,9 @@
         </svg>
         <p class="list-loading__text">Loading list</p>
     </div>
-    <div class="thumbs-cards" *ngIf="thumbs.length > 0" [ngClass]="{'thumbs-cards--list': typeList === 'list', 'thumbs-cards--grid': typeList === 'grid'}">
-        <ng-container *ngFor="let thumb of thumbs; trackBy: trackByItems">
-            <app-card [thumb]="thumb" [listType]="typeList"></app-card>
+    <div class="thumbs-cards" *ngIf="celebrities.length > 0" [ngClass]="{'thumbs-cards--list': typeList === 'list', 'thumbs-cards--grid': typeList === 'grid'}">
+        <ng-container *ngFor="let celebrity of celebrities; trackBy: trackByItems">
+            <app-card [celebrity]="celebrity" [listType]="typeList"></app-card>
         </ng-container>
     </div>
 </div>

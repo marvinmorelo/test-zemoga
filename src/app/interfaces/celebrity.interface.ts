@@ -1,4 +1,4 @@
-export default interface Thumb {
+export default interface Celebrity {
     id?: string;
     name: string;
     description: string;

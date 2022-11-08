@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import Thumb from 'src/app/interfaces/thumb.interface';
+import Celebrity from 'src/app/interfaces/celebrity.interface';
 import * as moment from 'moment';
 import { ThumbsService } from 'src/app/services/thumbs.service';
 
@@ -10,7 +10,7 @@ import { ThumbsService } from 'src/app/services/thumbs.service';
 })
 export class CardComponent implements OnInit {
 
-  @Input() thumb: Thumb | undefined;
+  @Input() celebrity: Celebrity | undefined;
   @Input() listType = 'list';
 
   buttonDisabled = true;
@@ -23,7 +23,7 @@ export class CardComponent implements OnInit {
   constructor(private thumbsService: ThumbsService) { }
 
   ngOnInit(): void {
-    this.copy = moment(this.thumb?.createdAt).fromNow() + ' in ' + this.capitalize(this.thumb?.category);
+    this.copy = moment(this.celebrity?.createdAt).fromNow() + ' in ' + this.capitalize(this.celebrity?.category);
   }
 
   capitalize(text: string = ''): string {
@@ -37,7 +37,7 @@ export class CardComponent implements OnInit {
   sendVote() {
     if (!this.voteAgain) {
       this.sendingVote = true;
-      const idThumb = this.thumb?.id ?? '';
+      const idThumb = this.celebrity?.id ?? '';
       this.thumbsService.updateThumbs(idThumb, this.thumpSelected === 'up').then((data) => {        
         this.copyButton = 'Vote Again';
         this.copy = 'Thank you for your vote!';
@@ -48,7 +48,7 @@ export class CardComponent implements OnInit {
       this.voteAgain = false;
       this.copyButton = 'Vote Now';
       this.thumpSelected = '';
-      this.copy = moment(this.thumb?.createdAt).fromNow() + ' in ' + this.capitalize(this.thumb?.category);
+      this.copy = moment(this.celebrity?.createdAt).fromNow() + ' in ' + this.capitalize(this.celebrity?.category);
     }
   }
 

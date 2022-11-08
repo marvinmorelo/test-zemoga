@@ -1,16 +1,16 @@
-<div class="thumb-card" [ngClass]="{'thumb-card-list': listType === 'list', 'thumb-card-grid': listType === 'grid'}" *ngIf="thumb">
+<div class="thumb-card" [ngClass]="{'thumb-card-list': listType === 'list', 'thumb-card-grid': listType === 'grid'}" *ngIf="celebrity">
     <div class="thumb-card-information">
-        <div class="result-thumb result-thumb--up" *ngIf="thumb.votes.positive >= thumb.votes.negative">
+        <div class="result-thumb result-thumb--up" *ngIf="celebrity.votes.positive >= celebrity.votes.negative">
             <img class="result-thumb__image" src="assets/img/thumbs-up.svg" alt="thumbs up" />
         </div>
-        <div class="result-thumb result-thumb--down" *ngIf="thumb.votes.positive < thumb.votes.negative">
+        <div class="result-thumb result-thumb--down" *ngIf="celebrity.votes.positive < celebrity.votes.negative">
             <img class="result-thumb__image" src="assets/img/thumbs-down.svg" alt="thumbs down" />
         </div>
-        <img class="thumb-card__image" [src]="'assets/img/celebrities/' + (thumb.picture | listTypeImage : listType)" [alt]="thumb.name">
+        <img class="thumb-card__image" [src]="'assets/img/celebrities/' + (celebrity.picture | listTypeImage : listType)" [alt]="celebrity.name">
         <div class="thumb-card__back-color"></div>
         <div class="thumb-card-content">
-            <h2 class="thumb-card-content__name">{{ thumb.name | truncateText : listType === 'list' ? 100 : 18 }}</h2>
-            <p class="thumb-card-content__description">{{ thumb.description | truncateText : listType === 'list' ? 100 : 70 }}</p>
+            <h2 class="thumb-card-content__name">{{ celebrity.name | truncateText : listType === 'list' ? 25 : 18 }}</h2>
+            <p class="thumb-card-content__description">{{ celebrity.description | truncateText : listType === 'list' ? 100 : 70 }}</p>
         </div>
         <div class="thumbs-vote">
             <div class="thumbs-vote__since">{{ copy }}</div>
@@ -35,19 +35,19 @@
     <div class="thumb-card-votes">
         <div 
             class="thumb-votes thumb-votes--up" 
-            [ngStyle]="{'width': (((thumb.votes.positive * 100) / (thumb.votes.positive + thumb.votes.negative)) | number:'1.0-1') + '%'}"
+            [ngStyle]="{'width': (((celebrity.votes.positive * 100) / (celebrity.votes.positive + celebrity.votes.negative)) | number:'1.0-1') + '%'}"
         >
             <img class="thumb-votes__image" src="assets/img/thumbs-up.svg" alt="thumbs up" />
             <span class="thumb-votes__percent">
-                {{ ((thumb.votes.positive * 100) / (thumb.votes.positive + thumb.votes.negative)) | number:'1.0-1' }}%
+                {{ ((celebrity.votes.positive * 100) / (celebrity.votes.positive + celebrity.votes.negative)) | number:'1.0-1' }}%
             </span>
         </div>
         <div 
             class="thumb-votes thumb-votes--down"
-            [ngStyle]="{'width': (((thumb.votes.negative * 100) / (thumb.votes.positive + thumb.votes.negative)) | number:'1.0-1') + '%'}"
+            [ngStyle]="{'width': (((celebrity.votes.negative * 100) / (celebrity.votes.positive + celebrity.votes.negative)) | number:'1.0-1') + '%'}"
         >
             <span class="thumb-votes__percent" >
-                {{ ((thumb.votes.negative * 100) / (thumb.votes.positive + thumb.votes.negative)) | number:'1.0-1' }}%
+                {{ ((celebrity.votes.negative * 100) / (celebrity.votes.positive + celebrity.votes.negative)) | number:'1.0-1' }}%
             </span>
             <img class="thumb-votes__image" src="assets/img/thumbs-down.svg" alt="thumbs down" />
         </div>

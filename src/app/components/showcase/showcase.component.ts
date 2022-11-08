@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import Thumb from 'src/app/interfaces/thumb.interface';
+import Celebrity from 'src/app/interfaces/celebrity.interface';
 import { ThumbsService } from '../../services/thumbs.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { ThumbsService } from '../../services/thumbs.service';
 })
 export class ShowcaseComponent implements OnInit {
 
-  featuredThumb: Thumb | undefined;
+  featuredThumb: Celebrity | undefined;
 
   constructor(private thumbsService: ThumbsService) { }
 
